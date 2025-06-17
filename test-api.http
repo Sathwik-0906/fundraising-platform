@@ -1,0 +1,32 @@
+POST http://localhost:5000/api/fundraisers
+Content-Type: application/json
+
+{
+  "title": "Help for School Fees",
+  "description": "Need support to pay tuition for the semester.",
+  "goalAmount": 15000
+}
+
+
+###
+GET http://localhost:5000/api/fundraisers
+
+
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Sathwik",
+  "email": "sathwik@example.com",
+  "password": "test1234"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "sathwik@example.com",
+  "password": "test1234"
+}
