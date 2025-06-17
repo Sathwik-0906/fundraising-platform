@@ -1,10 +1,4 @@
-You're right — you need the **complete `README.md` file**, ready to paste **as a single file** in your GitHub project. Here's the **full version with proper Markdown formatting**, covering **project info, setup, learning notes, and next steps**:
 
----
-
-### ✅ Complete `README.md` File:
-
-```markdown
 # 🧠 Fundraising Platform
 
 A full-stack MERN (MongoDB, Express, React, Node.js) fundraising platform that allows users to create and donate to fundraisers with secure authentication and modern API design.
@@ -194,5 +188,5 @@ npx kill-port 5000
 node test.js
 ```
 
----
+
 
