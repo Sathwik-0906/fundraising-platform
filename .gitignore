@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv files
+.env
+
+# Optional: VS Code settings
+.vscode/
+
+# Logs
+logs/
+*.log
+*.out
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional: test runners or coverage
+coverage/
+.jest/
+
+# Optional: frontend (if added later)
+frontend/node_modules/
+frontend/.env
