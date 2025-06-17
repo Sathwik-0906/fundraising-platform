@@ -1,26 +1,34 @@
+// backend/routes/fundraisers.js
 const express = require('express');
-const router = express.Router();
 const Fundraiser = require('../models/Fundraiser');
+const auth = require('../middleware/auth');
 
-// POST - Create a new fundraiser
-router.post('/', async (req, res) => {
+const router = express.Router();
+
+// Protected: Create fundraiser
+router.post('/', auth, async (req, res) => {
   try {
-    const fundraiser = new Fundraiser(req.body);
+    const { title, description, goalAmount } = req.body;
+
+    const fundraiser = new Fundraiser({
+      title,
+      description,
+      goalAmount,
+      creator: req.user.userId,
+    });
+
     await fundraiser.save();
     res.status(201).json(fundraiser);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+  } catch (error) {
+    console.error('Create fundraiser error:', error);
+    res.status(500).json({ message: 'Server error' });
   }
 });
 
-// GET - Get all fundraisers
+// Public: Get all fundraisers
 router.get('/', async (req, res) => {
-  try {
-    const fundraisers = await Fundraiser.find();
-    res.json(fundraisers);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+  const fundraisers = await Fundraiser.find();
+  res.json(fundraisers);
 });
 
 module.exports = router;

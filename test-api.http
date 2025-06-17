@@ -1,11 +1,15 @@
+
 POST http://localhost:5000/api/fundraisers
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODUxYTZlODNmMjRjNGM4NTJhYTc1YTkiLCJpYXQiOjE3NTAxODE5ODMsImV4cCI6MTc1MDc4Njc4M30.D2bFjuph1NC4f-34gzwTSnUwYV6j5blRfNRBhrK9H-c
 
 {
   "title": "Help for School Fees",
   "description": "Need support to pay tuition for the semester.",
   "goalAmount": 15000
 }
+
+
 
 
 ###
@@ -22,6 +26,8 @@ Content-Type: application/json
   "password": "test1234"
 }
 
+
+
 ###
 POST http://localhost:5000/api/auth/login
 Content-Type: application/json
@@ -30,3 +36,10 @@ Content-Type: application/json
   "email": "sathwik@example.com",
   "password": "test1234"
 }
+
+
+###
+GET http://localhost:5000/api/auth/ping
+
+###
+GET http://localhost:5000/test
